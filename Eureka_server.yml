@@ -21,7 +21,7 @@ spec:
               cpu: 100m
               memory: 100Mi
           ports:
-            - containerPort: 8761
+            - containerPort: 8080
 
 ---
 apiVersion: v1
@@ -34,8 +34,11 @@ spec:
   type: NodePort
   ports:
     - protocol: TCP
-      port: 8761
+      port: 8080
       nodePort: 30039
       name: eurekaserver
   selector:
     app: eurekaserver
+
+
+# Read configserver script to check how to run the service using kubectl and expose it for the internet

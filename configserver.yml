@@ -37,3 +37,12 @@ spec:
       name: configserver
   selector:
     app: configserver
+
+
+
+# How to run this:
+# Run the kubernetes service using kubectl apply -f configserver.yml
+# This will run the service at 8888 within kubernetes and expose it to the system on 30031
+# Check the service here: http://localhost:30031/user_services_app/default
+# Since its a nodeport it exposes the service to the internet. You can get your machine ip using ifconfig command and just open ${ip}:30031 on any device and it will work....MAGIC
+# WHen you run ifconfig it will list down lots of network things, the ip you are looking for is enp4s0
